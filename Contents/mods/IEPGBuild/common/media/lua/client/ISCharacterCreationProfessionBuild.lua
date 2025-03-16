@@ -86,8 +86,30 @@ function CharacterCreationProfession:importBuild()
     textArea:setMultipleLine(true)
     panel:addChild(textArea)
     
+    -- Definizione dimensioni pulsanti
+    local buttonWidth = 100
+    local buttonHeight = 25
+    local buttonY = panel.height - 40
+    local spacing = 10
+    
+    -- Calcolo posizione per tre pulsanti equidistanti
+    local totalButtonsWidth = buttonWidth * 3 + spacing * 2
+    local startX = (panel.width - totalButtonsWidth) / 2
+    
+    -- Aggiunta del pulsante PASTE
+    local pasteButton = ISButton:new(startX, buttonY, buttonWidth, buttonHeight, getText("UI_characreation_Paste"), panel, function()
+        local clipboardText = Clipboard.getClipboard()
+        if clipboardText and clipboardText ~= "" then
+            textArea:setText(clipboardText)
+        end
+    end)
+    pasteButton:initialise()
+    pasteButton:instantiate()
+    pasteButton.borderColor = {r=0.4, g=0.4, b=0.4, a=1}
+    panel:addChild(pasteButton)
+    
     -- Add import button
-    local importButton = ISButton:new(panel.width/2 - 105, panel.height - 40, 100, 25, getText("UI_characreation_BuildImport"), panel, function()
+    local importButton = ISButton:new(startX + buttonWidth + spacing, buttonY, buttonWidth, buttonHeight, getText("UI_characreation_BuildImport"), panel, function()
         local importCode = textArea:getText()
         if importCode and importCode ~= "" then
             local success, message = self:processImportCode(importCode)
@@ -107,7 +129,7 @@ function CharacterCreationProfession:importBuild()
     panel:addChild(importButton)
     
     -- Add cancel button
-    local cancelButton = ISButton:new(panel.width/2 + 5, panel.height - 40, 100, 25, getText("UI_btn_cancel"), panel, function()
+    local cancelButton = ISButton:new(startX + (buttonWidth + spacing) * 2, buttonY, buttonWidth, buttonHeight, getText("UI_btn_cancel"), panel, function()
         panel:removeFromUIManager()
     end)
     cancelButton:initialise()
@@ -129,6 +151,7 @@ function CharacterCreationProfession:importBuild()
         updateJoypadFocus(joypadData)
     end
 end
+
 
 -- Process the import code
 function CharacterCreationProfession:processImportCode(code)

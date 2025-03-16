@@ -6,5 +6,6 @@ UI_EN = {
 	UI_characreation_BuildImportFailed = "Failed to import build. Invalid code format.",
 	UI_characreation_BuildExportTitle = "Export Build Code",
 	UI_characreation_Copy = "Copy to Clipboard",
-	UI_characreation_BuildExportCopied = "Build code copied to clipboard!"
+	UI_characreation_BuildExportCopied = "Build code copied to clipboard!",
+	UI_characreation_Paste = "PASTE",
 }
