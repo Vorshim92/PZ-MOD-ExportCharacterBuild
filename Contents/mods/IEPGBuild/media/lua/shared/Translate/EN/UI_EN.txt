@@ -1,0 +1,10 @@
+UI_EN = {
+	UI_characreation_BuildImport = "IMPORT",
+	UI_characreation_BuildExport = "EXPORT",
+	UI_characreation_BuildImportPrompt = "Paste build code here:",
+	UI_characreation_BuildImportSuccess = "Build imported successfully!",
+	UI_characreation_BuildImportFailed = "Failed to import build. Invalid code format.",
+	UI_characreation_BuildExportTitle = "Export Build Code",
+	UI_characreation_Copy = "Copy to Clipboard",
+	UI_characreation_BuildExportCopied = "Build code copied to clipboard!"
+}

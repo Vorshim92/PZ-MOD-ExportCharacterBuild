@@ -1,0 +1,6 @@
+version=1
+id=3445834514
+title=Import Export Character Build Traits
+description=This mod allows you to import and export build of your character to share it with your friends.
+tags=Build 41;Build 42;Interface;Multiplayer;Traits
+visibility=public

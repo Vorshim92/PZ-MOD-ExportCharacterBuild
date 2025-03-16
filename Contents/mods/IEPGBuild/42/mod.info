@@ -1,0 +1,7 @@
+name=Import Export Character Build Traits
+id=buildimportexport
+description=This mod allows you to import and export build of your character to share it with your friends.
+poster=poster.png
+icon=modicon.png
+author=Vorshim92
+versionMin=42.0
